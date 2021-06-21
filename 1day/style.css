@@ -1,0 +1,105 @@
+		html, body {
+			height: 100%;
+			margin: 0;
+			box-sizing: border-box;
+			background-color: black;
+			color: white;
+            font-family: 'Roboto', sans-serif;	
+		}
+		nav {
+			position: fixed;
+			top: 20px;
+			left: 0;
+			width: 100%;
+			z-index: 999;
+		}
+		nav .logo {
+			float: left;
+			padding-left: 20px;
+		}
+		nav .menu {
+			float:  right;
+			margin-right: 20px;
+		}
+		nav .menu ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		nav .menu ul li {
+			display: table-cell;
+		}
+		nav .menu ul li a {
+			display: inline-block;
+			padding: 10px 0px;
+            margin: 0 20px;
+			color: white;
+			font-weight: bold;
+			text-decoration: none;
+			position: relative;
+		}
+		nav .menu ul li.c a {
+			background-color: #E0BC75;
+            padding: 10px 20px;
+		}
+		nav .menu ul li.c a:hover {
+			color: black;
+		}
+		nav .menu ul li.m a:after {
+			height: 3px;
+			background-color: #E0BC75;
+			width: 0;
+			position: absolute;
+			left: 0;
+			bottom:  0;
+			content: "";
+			transition: width 0.3s;
+		}
+		nav .menu ul li.m a:hover:after {
+			width: 100%;
+		}
+		header {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+		header video {
+			width: 100%;
+		}
+        header .container {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 150px;
+            width: 750px;
+        }
+        header .container h1 {
+            font-size: 40px;
+            color: #E0BC75;
+            font-family: 'Montserrat', sans-serif;
+        }
+        header .container span {
+            display: block;
+            font-size: 40px;
+            color: #E0BC75;
+            font-family: 'Mate SC', serif;
+        }
+        header .container p {
+            font-size: 1.2em;
+        }
+        header .container a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #E0BC75;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #E0BC75;
+            transition: 0.3s;
+        }
+        header .container a:hover{
+            color: #E0BC75;
+            background: none;
+
+        }
