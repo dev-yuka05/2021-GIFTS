@@ -1,0 +1,15 @@
+	<script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+	<script>
+		$(window).scroll(function(){
+			let st = $(window).scrollTop();
+			if( st > 0 ) {
+				$("nav .menu li.m a").css("color","black");
+				$(".logo img").attr("src","https://mediaboom.com/wp-content/uploads/2016/11/logo-dark.png");
+				$(".nav-bg").slideDown();
+			} else {
+				$("nav .menu li.m a").css("color","white");
+				$(".logo img").attr("src","https://mediaboom.com/wp-content/uploads/2016/09/logo-new.png");
+				$(".nav-bg").slideUp();
+			}
+		});
+	</script>
