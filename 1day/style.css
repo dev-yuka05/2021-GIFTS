@@ -4,7 +4,7 @@
 			box-sizing: border-box;
 			background-color: black;
 			color: white;
-            font-family: 'Roboto', sans-serif;	
+			font-family: 'Roboto', sans-serif;
 		}
 		nav {
 			position: fixed;
@@ -31,8 +31,8 @@
 		}
 		nav .menu ul li a {
 			display: inline-block;
-			padding: 10px 0px;
-            margin: 0 20px;
+			padding: 10px 0;
+			margin:  0 20px;
 			color: white;
 			font-weight: bold;
 			text-decoration: none;
@@ -40,7 +40,7 @@
 		}
 		nav .menu ul li.c a {
 			background-color: #E0BC75;
-            padding: 10px 20px;
+			padding: 10px 20px;
 		}
 		nav .menu ul li.c a:hover {
 			color: black;
@@ -67,39 +67,47 @@
 		header video {
 			width: 100%;
 		}
-        header .container {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 150px;
-            width: 750px;
-        }
-        header .container h1 {
-            font-size: 40px;
-            color: #E0BC75;
-            font-family: 'Montserrat', sans-serif;
-        }
-        header .container span {
-            display: block;
-            font-size: 40px;
-            color: #E0BC75;
-            font-family: 'Mate SC', serif;
-        }
-        header .container p {
-            font-size: 1.2em;
-        }
-        header .container a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #E0BC75;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border: 2px solid #E0BC75;
-            transition: 0.3s;
-        }
-        header .container a:hover{
-            color: #E0BC75;
-            background: none;
-
-        }
+		header .container {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left:  150px;
+			width: 700px;
+		}
+		header .container h1 {
+			font-size: 40px;
+			color: #E0BC75;
+			font-family: 'Montserrat', sans-serif;
+		}
+		header .container span {
+			display: block;
+			font-size: 40px;
+			font-family: 'Mate SC', serif;
+		}
+		header .container p {
+			font-size: 1.2em;
+		}
+		header .container a {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #E0BC75;
+			color: white;
+			text-decoration: none;
+			font-weight: bold;
+			border: 2px solid #E0BC75;
+			transition: 0.3s;
+		}
+		header .container a:hover {
+			color: #E0BC75;
+			background: none;
+		}
+		.nav-bg {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 80px;
+			background-color: white;
+			z-index: 998;
+			display: none;
+		}
