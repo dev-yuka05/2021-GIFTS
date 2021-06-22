@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>API</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+	<table id="posts" class="table">
+		<thead>
+			<tr class="table-dark">
+				<td>ID</td>
+				<td>Title</td>
+				<td>UserId</td>
+			</tr>
+		</thead>
+		<tbody id="postbody"></tbody>
+	</table>
+	<!-- https://jsonplaceholder.typicode.com/posts -->
+	<script>
+		fetch('https://jsonplaceholder.typicode.com/posts')
+			.then(response => response.json())
+			.then(json => showPosts(json))
+
+		const showPosts = (json) => {
+			json.forEach( row => { 
+				let tr = `<tr onclick='showDetail(${row.id})'><td>${row.id}</td><td>${row.title}</td><td>${row.userId}</td></tr>`
+				document.querySelector("#postbody").innerHTML += tr;
+			})
+		}
+
+		const showDetail = (id) => {
+			fetch('https://jsonplaceholder.typicode.com/posts/' + id)
+			.then(response => response.json())
+			.then(json => console.log(json))
+		}
+	</script>
+</body>
+</html>
