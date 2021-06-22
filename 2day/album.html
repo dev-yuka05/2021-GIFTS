@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>album</title>
+	<style>
+    body { background:url('https://images.pexels.com/photos/172277/pexels-photo-172277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); }
+ 		#album div {
+ 			display: inline-block;
+ 			background: #fff;
+ 			border:  15px solid #fff;
+ 			position: relative;
+ 			top: 100px;
+ 			transition: 0.5s;
+ 		}
+ 		#album div p {
+            font-weight: bold;
+ 			margin: 0;
+ 			font-size: 20px;
+ 			text-align: center;
+ 			text-transform: uppercase;
+ 		}
+ 		#album .p1 { transform: rotate(10deg); }
+ 		#album .p2 { transform: rotate(-15deg); }
+ 		#album .p3 { transform: rotate(30deg); }
+ 		#album .p4 { transform: rotate(-20deg); }
+ 		#album .p5 { transform: rotate(25deg); }
+ 		#album div:hover {
+ 			top: 0;
+ 			opacity: 0.5;
+ 			color: rgb(75, 75, 75);
+ 		}
+	</style>
+</head>
+<body>
+	<div id="album">
+		<div class="p1">
+			<img src="http://placeimg.com/300/300/nature" alt="nature">
+			<p>nature</p>
+		</div>
+		<div class="p2">
+			<img src="http://placeimg.com/300/300/people" alt="people">
+			<p>people</p>
+		</div>
+		<div class="p3">
+			<img src="http://placeimg.com/300/300/animals" alt="animals">
+			<p>animals</p>
+		</div>
+		<div class="p4">
+			<img src="http://placeimg.com/300/300/arch" alt="arch">
+			<p>arch</p>
+		</div>
+		<div class="p5">
+			<img src="http://placeimg.com/300/300/tech" alt="tech">
+			<p>tech</p>
+		</div>
+	</div>
+</body>
+</html>
