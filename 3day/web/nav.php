@@ -24,7 +24,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="" tabindex="-1" aria-disabled="true" target="_blank">코드공유</a>
+          <a class="nav-link" href="https://codepen.io/asimryu/professor/MWKEbKv" tabindex="-1" aria-disabled="true" target="_blank">코드공유</a>
         </li>
       </ul>
       <form class="d-flex">
