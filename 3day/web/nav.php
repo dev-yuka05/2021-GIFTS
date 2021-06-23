@@ -17,14 +17,14 @@
             커뮤니티
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">게시판</a></li>
+            <li><a class="dropdown-item" href="board.php">게시판</a></li>
             <li><a class="dropdown-item" href="#">갤러리</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">뉴스</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" target="_blank">코드공유</a>
+          <a class="nav-link" href="https://codepen.io/asimryu/professor/MWKEbKv" tabindex="-1" aria-disabled="true" target="_blank">코드공유</a>
         </li>
       </ul>
       <form class="d-flex">
