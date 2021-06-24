@@ -38,6 +38,10 @@ if( $id ) {
 			<label for="content">내용</label>
 			<textarea name="content" id="content" rows="10" class="form-control" required><?=$content?></textarea>
 		</div>
+		<div class="form-group">
+			<label for="title">첨부</label>
+			<input type="file" name="file" id="file" class="form-control">
+		</div>
 		<button type="submit" class="btn btn-warning mt-3">
 			<i class="fas fa-save"></i>
 			글저장

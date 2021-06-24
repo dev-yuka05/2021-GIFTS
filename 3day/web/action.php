@@ -10,6 +10,14 @@ $content = htmlspecialchars($content);
 if( $action == "addpost" ) {
 	if( $title && $content ) {
 		$file = "";
+		if( is_uploaded_file($_FILES['file']['tmp_name']) ) {
+			$upfolder = "./uploads/";
+			$filename = basename($_FILES['file']['name']);
+			$target = $upfolder . $filename;
+			if( move_uploaded_file($_FILES['file']['tmp_name'], $target) ) {
+				$file = $filename;
+			}
+		}
 		$sql = "INSERT INTO board(title, content, file, created_at, user_id, hit) VALUES(:title, :content, :file, now(), 0, 0)";
 		if( $rs = $db->prepare($sql) ) {
 			$rs->bindParam(":title", $title);

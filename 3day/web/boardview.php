@@ -24,6 +24,20 @@ if( $id ) {
 		}
 	}
 }
+$filelink = "";
+if( $file ) {
+	$path = "./uploads/" . $file;
+	if( file_exists($path) ) {
+		$ext = pathinfo($path, PATHINFO_EXTENSION);
+		$ext = strtolower($ext);
+		if( $ext == "jpg" || $ext == "gif" || $ext == "png" ) {
+			$filelink = "<img src='{$path}' style='max-width: 100%;   border: 1px solid #000; border-radius: 5px;'>";
+		} else {
+			$filelink = "<a href='{$path}'>{$file}</a>";
+		}
+	}
+}
+
 ?>
 <h1 class="mt-5">글보기</h1>
 <h3><?=$title?></h3>
@@ -35,6 +49,7 @@ if( $id ) {
 </p>
 <hr>
 <p class="mb-5"><?=nl2br($content)?></p>
+<p><?=$filelink?></p>
 <a href="/board.php" class="btn btn-success">
 	<i class="fas fa-list"></i>
 	목록으로

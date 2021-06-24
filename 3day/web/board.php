@@ -1,10 +1,18 @@
 <?php
 //board.php
 require_once("header.php");
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+if( ! $page ) $page = 1;
 $board_data = array();
-$sql = "SELECT * FROM board ORDER BY created_at DESC";
-if( $rs = $db->query($sql) ) {
-	$board_data = $rs->fetchAll();
+$total = 0; //전체 글 수
+$pageset = 10; // 한 페이지에 보여줄 목록 수
+$blockset = 10; // 페이지 버튼 수
+$sql = "SELECT * FROM board";
+if( $rstmp = $db->query($sql) ) $total = $rstmp->rowcount();
+if( $total ) {
+	$start = ($page - 1) * $pageset;
+	$sql .= " ORDER BY created_at DESC LIMIT {$start}, {$pageset}";
+	if( $rs = $db->query($sql) ) $board_data = $rs->fetchAll();
 }
 ?>
 <h1 class="mt-5">게시판</h1>
@@ -15,7 +23,7 @@ if( $rs = $db->query($sql) ) {
 	</button>
 </p>
 <div id="form-box" class="mb-5">
-	<form action="action.php" method="post">
+	<form action="action.php" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="action" value="addpost">
 		<div class="form-group">
 			<label for="title">제목</label>
@@ -24,6 +32,10 @@ if( $rs = $db->query($sql) ) {
 		<div class="form-group">
 			<label for="content">내용</label>
 			<textarea name="content" id="content" rows="10" class="form-control" required></textarea>
+		</div>
+		<div class="form-group">
+			<label for="title">첨부</label>
+			<input type="file" name="file" id="file" class="form-control">
 		</div>
 		<button type="submit" class="btn btn-success btn-lg mt-3">
 			<i class="fas fa-save"></i>
@@ -42,6 +54,7 @@ if( $rs = $db->query($sql) ) {
 			<th>Title</th>
 			<th>Created At</th>
 			<th>User Id</th>
+			<th>File</th>
 			<th>hit</th>
 		</tr>
 	</thead>
@@ -56,10 +69,30 @@ if( $rs = $db->query($sql) ) {
 			</td>
 			<td><?=$row['created_at']?></td>
 			<td><?=$row['user_id']?></td>
+			<td>
+				<?php
+					$icon = "";
+					if( $row['file'] ) {
+						$path = "./uploads/" . $row['file'];
+						if( file_exists($path) ) {
+							$ext = pathinfo($path, PATHINFO_EXTENSION);
+							$ext = strtolower($ext);
+							if( $ext == "jpg" || $ext == "gif" || $ext == "png" ) {
+								$icon = "<i class='fa fa-file-image'></i>";
+							} else {
+								$icon = "<i class='fa fa-file'></i>";
+							}
+							$icon = "<a href='{$path}'>{$icon}</a>";
+						}
+					}
+					echo $icon;
+				?>
+			</td>
 			<td><?=$row['hit']?></td>
 		</tr>
 		<?php endforeach;?>
 	</tbody>
 </table>
+<p><?=pagination($total, $pageset, $blockset, $page)?></p>
 <?php
 require_once("footer.php");

@@ -22,3 +22,9 @@ $(".board-del").on("click", function(event){
 		}
 	});
 });
+
+$(".page-link").on("click", function(event){
+	event.preventDefault();
+	var pg = $(this).attr("href");
+	location.href = "board.php?page=" + pg;
+});
