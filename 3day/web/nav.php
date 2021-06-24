@@ -17,7 +17,8 @@
             커뮤니티
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="board.php">게시판</a></li>
+            <li><a class="dropdown-item" href="board.php">게시판1</a></li>
+            <li><a class="dropdown-item" href="board2.php">게시판2</a></li>
             <li><a class="dropdown-item" href="#">갤러리</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">뉴스</a></li>

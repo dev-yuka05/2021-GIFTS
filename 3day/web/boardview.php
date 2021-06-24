@@ -31,7 +31,7 @@ if( $file ) {
 		$ext = pathinfo($path, PATHINFO_EXTENSION);
 		$ext = strtolower($ext);
 		if( $ext == "jpg" || $ext == "gif" || $ext == "png" ) {
-			$filelink = "<img src='{$path}' style='max-width: 100%;   border: 1px solid #000; border-radius: 5px;'>";
+			$filelink = "<img src='{$path}' style='max-width: 100%;'>";
 		} else {
 			$filelink = "<a href='{$path}'>{$file}</a>";
 		}
@@ -63,5 +63,6 @@ if( $file ) {
 	삭제
 </a>
 <p class="mb-5">&nbsp;</p>
+
 <?php
 require_once("footer.php");

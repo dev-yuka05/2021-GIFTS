@@ -7,6 +7,7 @@ $content = isset($_POST['content']) ? $_POST['content'] : "";
 $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
 $title = htmlspecialchars($title);
 $content = htmlspecialchars($content);
+$page = isset($_POST['page']) ? (int)$_POST['page'] : 1;
 if( $action == "addpost" ) {
 	if( $title && $content ) {
 		$file = "";
@@ -53,4 +54,11 @@ if( $action == "addpost" ) {
 		}
 	}
 	header("Location: /boardview.php?id=".$id);
+} else if( $action == "getposts" ) {
+	if( ! $page ) $page = 1;
+	$start = ($page - 1) * 10;
+	$sql = "SELECT * FROM board ORDER BY created_at LIMIT {$start}, 10";
+	$data = array();
+	if( $rs = $db->query($sql) ) $data = $rs->fetchAll(PDO::FETCH_ASSOC);
+	echo json_encode($data);
 }

@@ -13,8 +13,4 @@
 </head>
 <body>
 	<div class="container">
-	<?php require_once("nav.php"); ?> 
-	</div>
-	<script src="js/app.js"></script>
-</body>
-</html>
+		<?php require_once("nav.php"); ?>
